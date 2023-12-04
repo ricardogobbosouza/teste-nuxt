@@ -6,5 +6,10 @@ export default defineNuxtConfig({
     families: {
       Ubuntu: true
     }
+  },
+  nitro: {
+    prerender: {
+      routes: ['/']
+    }
   }
 })
