@@ -7,10 +7,5 @@ export default defineNuxtConfig({
       Roboto: true,
       Ubuntu: true
     }
-  },
-  nitro: {
-    prerender: {
-      routes: ['/']
-    }
   }
 })
