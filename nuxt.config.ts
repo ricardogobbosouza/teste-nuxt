@@ -7,5 +7,15 @@ export default defineNuxtConfig({
       Roboto: true,
       Ubuntu: true
     }
+  },
+  postcss: {
+      plugins: {
+        cssnano: {
+          preset: ['default', {
+            /* NOTE: prevent break url in google-font @font-face */
+            normalizeUrl: false
+          }]
+        }
+      }
   }
 })
