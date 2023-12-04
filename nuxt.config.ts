@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/google-fonts", "@nuxtjs/tailwindcss"],
   googleFonts: {
     families: {
-      Roboto: true,
+      Inter: true,
       Ubuntu: true
     }
   },
