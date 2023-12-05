@@ -3,7 +3,7 @@ import { resolve } from 'pathe'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/google-fonts","@nuxtjs/tailwindcss"],
+  modules: [/*"@nuxtjs/google-fonts",*/"@nuxtjs/tailwindcss"],
   googleFonts: {
     families: {
       Inter: true,
@@ -11,16 +11,16 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
-    publicAssets: [
+    /*publicAssets: [
       { dir: './fonts' }
-    ],
+    ],*/
     prerender: {
       routes: ['/']
     }
   },
-  css: [
+  /*css: [
     resolve('./fonts/style.css')
-  ]
+  ],*/
   /*
   css: [
     '@/assets/css/style.css'
