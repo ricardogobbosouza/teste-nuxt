@@ -33,7 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     base64: false,
     inject: true,
     overwriting: false,
-    outputDir: './nuxt-google-fonts',
+    outputDir: '@/nuxt-google-fonts',
     stylePath: 'css/nuxt-google-fonts.css',
     fontsDir: 'fonts',
     fontsPath: '../fonts'
@@ -115,9 +115,8 @@ export default defineNuxtModule<ModuleOptions>({
         await downloader.execute()
 
         if (options.inject) {
-          console.log(resolve(outputDir, options.stylePath))
-          //nuxt.options.css.push(resolve(outputDir, options.stylePath))
-          nuxt.options.css.push(await resolvePath('@/fonts/style.css'))
+          nuxt.options.css.push(resolve(outputDir, options.stylePath))
+          //nuxt.options.css.push(await resolvePath('@/fonts/style.css'))
         }
 
         // Add the nuxt google fonts directory
