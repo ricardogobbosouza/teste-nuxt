@@ -115,12 +115,16 @@ export default defineNuxtModule<ModuleOptions>({
         await downloader.execute()
 
         if (options.inject) {
+          console.log('-----------------------')
+          console.log('-----------------------')
           console.log(resolve(outputDir, options.stylePath))
           console.log(await resolvePath(resolve(outputDir, options.stylePath)))
+          console.log(await resolvePath('@/fonts/style.css'))
           console.log('-----------------------')
-          
-          nuxt.options.css.push(resolve(outputDir, options.stylePath))
-          //nuxt.options.css.push(await resolvePath('@/fonts/style.css'))
+          console.log('-----------------------')
+
+          //nuxt.options.css.push(resolve(outputDir, options.stylePath))
+          nuxt.options.css.push(await resolvePath('@/fonts/style.css'))
         }
 
         // Add the nuxt google fonts directory
