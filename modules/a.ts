@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve } from 'pathe'
 import type { MetaObject } from '@nuxt/schema'
 import { defineNuxtModule, isNuxt2, resolvePath, useLogger } from '@nuxt/kit'
@@ -116,14 +116,26 @@ export default defineNuxtModule<ModuleOptions>({
         await downloader.execute()
 
         if (options.inject) {
-          console.log('-----------------------')
-          console.log('-----------------------')
-          console.log(resolve(outputDir, options.stylePath))
-          console.log(await resolvePath(resolve(outputDir, options.stylePath)))
-          console.log(await resolvePath('@/fonts/style.css'))
-          console.log(readFileSync(resolve(outputDir, options.stylePath), 'utf-8'))
-          console.log('-----------------------')
-          console.log('-----------------------')
+          const content = readFileSync(resolve(outputDir, options.stylePath), 'utf-8');
+          content.replace('/* cyrillic */', '')
+          content.replace('/* cyrillic */', '')
+          content.replace('/* cyrillic */', '')
+
+          content.replace('/* cyrillic-ext */', '')
+          content.replace('/* cyrillic */', '')
+          content.replace('/* greek-ext */', '')
+          content.replace('/* greek */', '')
+          content.replace('/* vietnamese */', '')
+          content.replace('/* latin-ext */', '')
+          content.replace('/* latin */', '')
+          content.replace('/* cyrillic-ext */', '')
+          content.replace('/* cyrillic */', '')
+          content.replace('/* greek-ext */', '')
+          content.replace('/* greek */', '')
+          content.replace('/* latin-ext */', '')
+          content.replace('/* latin */', '')
+          writeFileSync(resolve(outputDir, options.stylePath), content, 'utf-8')
+          console.log(content)
 
           nuxt.options.css.push(resolve(outputDir, options.stylePath))
         }
