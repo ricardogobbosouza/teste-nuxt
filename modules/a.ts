@@ -116,12 +116,12 @@ export default defineNuxtModule<ModuleOptions>({
 
         /*if (options.inject) {
           nuxt.options.css.push(resolve(outputDir, options.stylePath))
-        }
+        }*/
 
         // Add the nuxt google fonts directory
         nuxt.options.nitro = nuxt.options.nitro || {}
         nuxt.options.nitro.publicAssets = nuxt.options.nitro.publicAssets || []
-        nuxt.options.nitro.publicAssets.push({ dir: outputDir })*/
+        nuxt.options.nitro.publicAssets.push({ dir: outputDir })
       } catch (e) {
         logger.error(e)
       }
