@@ -112,11 +112,11 @@ export default defineNuxtModule<ModuleOptions>({
           }
         })
 
-        await downloader.execute()
-
         if (options.inject) {
           nuxt.options.css.push(await resolvePath(resolve(outputDir, options.stylePath)))
         }
+
+         await downloader.execute()
 
         // Add the nuxt google fonts directory
         nuxt.options.nitro = nuxt.options.nitro || {}
