@@ -3,7 +3,7 @@ import { resolve } from 'pathe'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [/*"@nuxtjs/google-fonts",*/"@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/google-fonts","@nuxtjs/tailwindcss"],
   googleFonts: {
     families: {
       Inter: true,
