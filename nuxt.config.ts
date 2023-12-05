@@ -9,13 +9,18 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    publicAssets: [
+      { dir: './fonts' }
+    ],
     prerender: {
       routes: ['/']
     }
   },
+  /*
   css: [
     '@/assets/css/style.css'
   ],
+  */
   /*postcss: {
      plugins: {
        tailwindcss: {},
