@@ -116,24 +116,26 @@ export default defineNuxtModule<ModuleOptions>({
         await downloader.execute()
 
         if (options.inject) {
-          const content = readFileSync(resolve(outputDir, options.stylePath), 'utf-8');
-          content.replace('/* cyrillic */', '')
-          content.replace('/* cyrillic */', '')
-          content.replace('/* cyrillic */', '')
+          let content = readFileSync(resolve(outputDir, options.stylePath), 'utf-8');
 
-          content.replace('/* cyrillic-ext */', '')
-          content.replace('/* cyrillic */', '')
-          content.replace('/* greek-ext */', '')
-          content.replace('/* greek */', '')
-          content.replace('/* vietnamese */', '')
-          content.replace('/* latin-ext */', '')
-          content.replace('/* latin */', '')
-          content.replace('/* cyrillic-ext */', '')
-          content.replace('/* cyrillic */', '')
-          content.replace('/* greek-ext */', '')
-          content.replace('/* greek */', '')
-          content.replace('/* latin-ext */', '')
-          content.replace('/* latin */', '')
+          content = content.replace('/* cyrillic */', '')
+          content = content.replace('/* cyrillic */', '')
+          content = content.replace('/* cyrillic */', '')
+          content = content.replace('/* cyrillic-ext */', '')
+          content = content.replace('/* cyrillic */', '')
+          content = content.replace('/* greek-ext */', '')
+          content = content.replace('/* greek */', '')
+          content = content.replace('/* vietnamese */', '')
+          content = content.replace('/* latin-ext */', '')
+          content = content.replace('/* latin */', '')
+          content = content.replace('/* cyrillic-ext */', '')
+          content = content.replace('/* cyrillic */', '')
+          content = content.replace('/* greek-ext */', '')
+          content = content.replace('/* greek */', '')
+          content = content.replace('/* latin-ext */', '')
+          content = content.replace('/* latin */', '')
+          //.replace(/\/\*[\s\S]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g,'')
+
           writeFileSync(resolve(outputDir, options.stylePath), content, 'utf-8')
           console.log(content)
 
