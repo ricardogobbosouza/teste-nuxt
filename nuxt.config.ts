@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       routes: ['/']
     }
   },
+  css: [
+    '@/assets/css/style.scss'
+  ],
   postcss: {
      plugins: {
        tailwindcss: {},
