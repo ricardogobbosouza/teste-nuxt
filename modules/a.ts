@@ -33,7 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     base64: false,
     inject: true,
     overwriting: false,
-    outputDir: 'node_modules/.cache/nuxt-google-fonts',
+    outputDir: './nuxt-google-fonts',
     stylePath: 'css/nuxt-google-fonts.css',
     fontsDir: 'fonts',
     fontsPath: '../fonts'
