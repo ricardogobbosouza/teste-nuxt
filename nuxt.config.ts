@@ -16,6 +16,9 @@ export default defineNuxtConfig({
       routes: ['/']
     }
   },
+  css: [
+     'style.css'
+  ]
   /*
   css: [
     '@/assets/css/style.css'
