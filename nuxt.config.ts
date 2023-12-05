@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     }
   },
   css: [
-     'style.css'
+     './fonts/style.css'
   ]
   /*
   css: [
