@@ -136,7 +136,17 @@ export default defineNuxtModule<ModuleOptions>({
           content = content.replace('/* latin */', '')
           content = content.replace(/\/\*[\s\S]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g,'')
 
-          writeFileSync(resolve(outputDir, options.stylePath), ``, 'utf-8')
+          writeFileSync(resolve(outputDir, options.stylePath), `/* https://fonts.googleapis.com/css2?family=Inter&family=Ubuntu&display=swap */
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/Inter-400-1.woff2') format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+`, 'utf-8')
           console.log(content)
 
           nuxt.options.css.push(resolve(outputDir, options.stylePath))
