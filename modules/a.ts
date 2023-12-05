@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { resolve } from 'pathe'
 import type { MetaObject } from '@nuxt/schema'
 import { defineNuxtModule, isNuxt2, resolvePath, useLogger } from '@nuxt/kit'
@@ -120,11 +121,11 @@ export default defineNuxtModule<ModuleOptions>({
           console.log(resolve(outputDir, options.stylePath))
           console.log(await resolvePath(resolve(outputDir, options.stylePath)))
           console.log(await resolvePath('@/fonts/style.css'))
+          console.log(readFileSync(resolve(outputDir, options.stylePath), 'utf-8'))
           console.log('-----------------------')
           console.log('-----------------------')
 
-          //nuxt.options.css.push(resolve(outputDir, options.stylePath))
-          nuxt.options.css.push(await resolvePath('@/fonts/style.css'))
+          nuxt.options.css.push(resolve(outputDir, options.stylePath))
         }
 
         // Add the nuxt google fonts directory
