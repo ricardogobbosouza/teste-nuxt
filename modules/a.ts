@@ -134,7 +134,7 @@ export default defineNuxtModule<ModuleOptions>({
           content = content.replace('/* greek */', '')
           content = content.replace('/* latin-ext */', '')
           content = content.replace('/* latin */', '')
-          //.replace(/\/\*[\s\S]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g,'')
+          content = content.replace(/\/\*[\s\S]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g,'')
 
           writeFileSync(resolve(outputDir, options.stylePath), content, 'utf-8')
           console.log(content)
