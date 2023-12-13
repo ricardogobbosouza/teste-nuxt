@@ -1,39 +1,27 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-import { resolve } from 'pathe'
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: [/*"@nuxtjs/google-fonts",*/"@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/google-fonts"],
   googleFonts: {
-    families: {
-      Inter: true,
-      Ubuntu: true
+     families: {
+      Inter: {
+        wght: '100..900'
+      },
+      'Space Grotesk': {
+        wght: '300..700'
+      }
     }
   },
   nitro: {
-    /*publicAssets: [
-      { dir: './fonts' }
-    ],*/
     prerender: {
       routes: ['/']
     }
   },
-  /*css: [
-    resolve('./fonts/style.css')
-  ],*/
-  /*
-  css: [
-    '@/assets/css/style.css'
-  ],
-  */
-  /*postcss: {
+  postcss: {
      plugins: {
-       tailwindcss: {},
-       autoprefixer: {},
       cssnano:
         process.env.NODE_ENV === 'production'
           ? { preset: ['default', { discardComments: { removeAll: true } }] }
           : false, // disable cssnano when not in production
      },
-  }*/
+  }
 })
